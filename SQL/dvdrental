@@ -1,0 +1,28 @@
+## data set about dvdrental chain . includes sales info,customers,employees , etc 
+  
+  # which  movies from pg-13 has the lowest replacemt cost ?#
+  
+   select  replacement_cost from film 
+   where rating = 'PG-13'
+   order by replacement_cost asc 
+   limit 1
+  
+  # which  person  made the highest purchse ?# 
+  
+  select first_name, last_name , amount
+  from customer 
+  inner join payment 
+  on customer.customer_id = payment.customer_id
+  order by amount desc 
+  limit 1 
+    
+  #what is the employees name , who made the rental on 25/05/2005#?
+    
+  select first_name, last_name  from staff 
+  inner join rental 
+  on staff.staff_id = rental.staff_id 
+  where rental_date= '2005-05-24'
+
+  ##  
+
+    
